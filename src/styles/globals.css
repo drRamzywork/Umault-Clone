@@ -1,4 +1,4 @@
-html,
+/* html,
 body,
 * {
   padding: 0;
@@ -86,9 +86,92 @@ body {
   color: var(--primaryTextColor);
 }
 
-.div {
-  color: #ffff;
-  background-color: black;
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9); 
+  z-index: 9999; 
+}
+
+.animated-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  font-family: "Arial", sans-serif; 
+}
+
+.div {
+  height: 1400px;
+  width: 100%;
+  background-color: black;
+} */
+
+.div,
+.div2 {
+  height: 1400px;
+  width: 100%;
+  background-color: black;
+}
+
+.div2 {
+  background-color: red !important;
+}
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  will-change: transform;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9); /* لون الخلفية الداكنة */
+  z-index: 9999; /* تأكد أن الطبقة تظهر فوق كل المحتويات */
+}
+
+.animated-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff; /* لون النص الأبيض */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل النص */
+  font-family: "Arial", sans-serif; /* الخط */
+}
+
+.section {
+  height: 100vh;
+}
+
+.scroll-section-outer {
+  overflow: hidden;
+}
+
+.scroll-section-inner {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.scroll-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
