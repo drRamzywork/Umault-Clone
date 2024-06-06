@@ -92,6 +92,8 @@ import ScrollSection from '@/components/ScrollSection';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
 import { ScrollSmoother } from 'gsap-trial/dist/ScrollSmoother';
+import FullScreenAnimation from '@/components/FullScreenAnimation';
+import HeroSection from '@/components/Home/HeroSection';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -104,22 +106,8 @@ export default function Home() {
       // Run the animation
       gsap.fromTo('.animated-text',
         { opacity: 0, y: -50 },
-        {
-          opacity: 1, y: 0, duration: 1, onComplete: () => {
-            // Hide the fullscreen overlay after the animation ends
-            gsap.to('.fullscreen-overlay', {
-              opacity: 0, duration: 1, onComplete: () => {
-                document.querySelector('.fullscreen-overlay').style.display = 'none';
-              }
-            });
-            // Set a flag to indicate the animation has run
-            sessionStorage.setItem('animationPlayed', 'true');
-          }
-        }
+
       );
-    } else {
-      // Hide the overlay immediately if the animation has already run
-      document.querySelector('.fullscreen-overlay').style.display = 'none';
     }
 
     // Smooth scrolling setup
@@ -143,13 +131,20 @@ export default function Home() {
       </Head>
       <div>
         <Header />
+
         <div id="smooth-wrapper">
+
           <div id="smooth-content">
-            <main className={styles.main} style={{ paddingTop: '4rem' }}>
-              <div className="fullscreen-overlay">
+            <main className={styles.main} >
+              {/* <div className="fullscreen-overlay">
                 <div className="animated-text">Your Text Here</div>
                 <div className="animated-text">Your Text Here</div>
-              </div>
+              </div> */}
+
+
+              <HeroSection />
+
+              <FullScreenAnimation />
               <div className='div' />
               <div className='div2' />
 
@@ -158,7 +153,7 @@ export default function Home() {
             </main>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 }

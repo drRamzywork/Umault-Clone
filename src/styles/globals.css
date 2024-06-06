@@ -113,16 +113,10 @@ body {
   background-color: black;
 } */
 
-.div,
-.div2 {
-  height: 1400px;
-  width: 100%;
-  background-color: black;
+body {
+  background-color: #000000;
 }
 
-.div2 {
-  background-color: red !important;
-}
 #smooth-wrapper {
   overflow: hidden;
 }
@@ -174,4 +168,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.div,
+.div2 {
+  height: 1400px;
+  width: 100%;
+  background-color: black;
+}
+
+.div2 {
+  background-color: red !important;
 }
